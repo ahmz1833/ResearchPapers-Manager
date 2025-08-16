@@ -1,7 +1,11 @@
-.PHONY: build up down logs fmt scale
+.PHONY: build recreate up down logs fmt scale
 
 build:
 	docker build -t research-papers-manager:latest .
+
+recreate:
+	docker compose down
+	docker compose up -d --build --force-recreate
 
 up:
 	docker compose up --build -d

@@ -4,9 +4,9 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 
+import redis
 from flask import Flask
 from pymongo import MongoClient
-import redis
 
 
 @dataclass

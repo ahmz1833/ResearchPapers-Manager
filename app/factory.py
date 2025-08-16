@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from flask import Flask
 
-from .extensions import mongo_client, redis_client
 from .config import Config
+from .extensions import mongo_client, redis_client
 from .scheduler import scheduler
 
 
@@ -35,8 +35,8 @@ def create_indexes(app: Flask) -> None:
 
 
 def register_blueprints(app: Flask) -> None:
-    from .api.health import bp as health_bp
     from .api.auth import bp as auth_bp
+    from .api.health import bp as health_bp
     from .api.papers import bp as papers_bp
 
     app.register_blueprint(health_bp)
