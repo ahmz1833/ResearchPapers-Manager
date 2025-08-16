@@ -141,8 +141,7 @@ cython_debug/
 # VSCode
 .vscode/
 
-# Docker
-.dockerignore
+# Docker (keep .dockerignore tracked)
 
 # OS
 .DS_Store
