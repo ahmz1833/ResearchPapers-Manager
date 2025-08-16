@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    container_name: rpapermgr-api
+    env_file: .env
+    environment:
+      # Override gunicorn args if needed
+      GUNICORN_CMD_ARGS: ${GUNICORN_CMD_ARGS:---bind 0.0.0.0:8000 --workers=4 --timeout 60 --graceful-timeout 30 --log-level=info}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+      - redis
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  mongo:
+    image: mongo:7.0
+    container_name: rpapermgr-mongo
+    environment:
+      MONGO_INITDB_DATABASE: research_db
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+  redis:
+    image: redis:7.2-alpine
+    container_name: rpapermgr-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+volumes:
+  mongo_data:
+  redis_data:
