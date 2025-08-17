@@ -5,7 +5,7 @@ url: http://localhost:8000/signup
 body:
   content: |-
     {
-      "username": "ahmz2",
+      "username": "ahmz",
       "name": "AH MZ",
       "email": "ahmz@example.com",
       "password": "securePassword123",

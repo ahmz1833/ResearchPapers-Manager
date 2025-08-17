@@ -43,7 +43,7 @@ class ViewSyncService:
             total_views = 0
             errors = []
 
-            for key in view_keys:
+            for key in view_keys: # type: ignore
                 try:
                     # Extract paper_id from key (paper_views:paper_id)
                     paper_id = key.replace("paper_views:", "")
@@ -51,7 +51,7 @@ class ViewSyncService:
                     if not view_count:
                         continue
 
-                    view_count = int(view_count)
+                    view_count = int(view_count) # type: ignore
                     if view_count <= 0:
                         continue
 
@@ -95,7 +95,7 @@ class ViewSyncService:
         try:
             return [
                 key.decode() if isinstance(key, bytes) else key
-                for key in redis_client.keys("paper_views:*")
+                for key in redis_client.keys("paper_views:*") # type: ignore
             ]
         except Exception:
             return []
@@ -113,7 +113,7 @@ class ViewSyncService:
                 try:
                     count = redis_client.get(key)
                     if count:
-                        total_pending_views += int(count)
+                        total_pending_views += int(count) # type: ignore
                 except Exception:
                     continue
 

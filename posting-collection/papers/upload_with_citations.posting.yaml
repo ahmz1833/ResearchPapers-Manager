@@ -10,11 +10,11 @@ body:
       "abstract": "This survey paper reviews the current state of natural language processing applications in healthcare systems. We analyze various approaches including named entity recognition, text classification, and sentiment analysis in medical texts. The paper discusses challenges and future directions for NLP in healthcare applications.",
       "keywords": ["natural language processing", "healthcare", "medical text", "survey"],
       "publication_date": "2024-02-20",
-      "citations": ["68a16a028d7964c223e95117", "68a171176f754a6064c94758"]
+      "citations": ["68a18023b6f382855da5a726"]
     }
   content_type: application/json
 headers:
 - name: Content-Type
   value: application/json
 - name: X-User-ID
-  value: 68a168dffb6d0e7f821862dc
+  value: 68a17f94b6f382855da5a725

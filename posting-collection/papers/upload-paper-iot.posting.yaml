@@ -5,10 +5,10 @@ url: http://localhost:8000/papers
 body:
   content: |-
     {
-      "title": "Smart Home Automation Using IoT",
+      "title": "Smart Home Automation Using IoT Dr. Ansari",
       "authors": ["Dr. Ansari"],
       "abstract": "An exploration of IoT applications in smart home environments, focusing on embedded systems and sensor networks.",
-      "keywords": ["iot", "smart home", "internet of things", "embedded", "sensor networks"],
+      "keywords": ["iot", "internet of things", "embedded", "sensor networks", "ansari"],
       "publication_date": "2025-01-15",
       "citations": []
     }
@@ -17,4 +17,4 @@ headers:
 - name: Content-Type
   value: application/json
 - name: X-User-ID
-  value: 68a168dffb6d0e7f821862dc
+  value: 68a17f94b6f382855da5a725
