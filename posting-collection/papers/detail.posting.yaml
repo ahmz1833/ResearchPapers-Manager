@@ -1,0 +1,6 @@
+name: Get Paper Details
+description: Get detailed information about a specific paper (increments view count)
+url: http://localhost:8000/papers/68a171176f754a6064c94758
+headers:
+- name: Content-Type
+  value: application/json

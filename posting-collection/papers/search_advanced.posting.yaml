@@ -1,0 +1,13 @@
+name: Search Papers - Advanced Query
+description: Search papers with specific keywords and sorting
+url: http://localhost:8000/papers
+headers:
+- name: Content-Type
+  value: application/json
+params:
+- name: search
+  value: regression
+- name: sort_by
+  value: publication_date
+- name: order
+  value: asc

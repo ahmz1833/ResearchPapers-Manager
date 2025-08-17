@@ -1,14 +1,14 @@
-name: Login
-description: Login
+name: User Login
+description: Authenticate user and get access token
 method: POST
 url: http://localhost:8000/login
 body:
   content: |-
     {
-      "username" : "ahmz",
-      "password" : "12i3iiii"
+      "username": "ahmz3",
+      "password": "securePassword123"
     }
   content_type: application/json
 headers:
-- name: content-type
+- name: Content-Type
   value: application/json

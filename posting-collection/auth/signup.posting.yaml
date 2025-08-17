@@ -1,5 +1,5 @@
-name: Signup
-description: Signup
+name: User Signup
+description: Register a new user
 method: POST
 url: http://localhost:8000/signup
 body:
@@ -7,11 +7,11 @@ body:
     {
       "username": "ahmz2",
       "name": "AH MZ",
-      "email": "ahmz.ut@gmail.com",
-      "password": "12i3iiii",
+      "email": "ahmz@example.com",
+      "password": "securePassword123",
       "department": "CE"
     }
   content_type: application/json
 headers:
-- name: content-type
+- name: Content-Type
   value: application/json

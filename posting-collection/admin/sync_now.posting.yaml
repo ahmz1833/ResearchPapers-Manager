@@ -1,0 +1,7 @@
+name: Sync Now
+description: Sync Now Redis with MongoDB
+method: POST
+url: http://localhost:8000/admin/sync-now
+headers:
+- name: Content-Type
+  value: application/json

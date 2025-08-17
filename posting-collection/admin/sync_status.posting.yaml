@@ -1,0 +1,6 @@
+name: Sync Status
+description: Check background sync job status
+url: http://localhost:8000/admin/sync-status
+headers:
+- name: Content-Type
+  value: application/json

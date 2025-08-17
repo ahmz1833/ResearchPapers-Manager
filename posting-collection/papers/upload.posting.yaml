@@ -1,0 +1,20 @@
+name: Upload Paper
+description: Upload a new research paper (requires authentication)
+method: POST
+url: http://localhost:8000/papers
+body:
+  content: |-
+    {
+      "title": "Advanced Machine Learning Techniques for Data Analysis",
+      "author": ["Dr. Rohban", "Dr. Soleymani"],
+      "abstract": "This paper presents comprehensive machine learning approaches for analyzing complex datasets. We propose novel algorithms that combine deep learning with traditional statistical methods to achieve superior performance in classification and prediction tasks. Our experiments on multiple benchmark datasets demonstrate significant improvements over existing methods.",
+      "keywords": ["machine learning", "data analysis", "deep learning", "classification"],
+      "publication_date": "2024-01-15",
+      "citations": []
+    }
+  content_type: application/json
+headers:
+- name: Content-Type
+  value: application/json
+- name: X-User-ID
+  value: 68a168dffb6d0e7f821862dc
