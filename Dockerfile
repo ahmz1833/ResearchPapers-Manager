@@ -22,6 +22,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy source
 COPY app ./app
+COPY scripts ./scripts
 COPY wsgi.py ./
 
 USER appuser

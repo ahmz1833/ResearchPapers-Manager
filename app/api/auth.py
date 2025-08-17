@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-import redis
-from flask import Blueprint, current_app, jsonify, request
+from flask import Blueprint, jsonify, request
 
 from ..models.user import User
+from ..utils.cache import CacheService
 from ..utils.validation import validate_login_data, validate_signup_data
 
 bp = Blueprint("auth", __name__)
@@ -42,18 +42,14 @@ def signup():
             return jsonify({"error": "Validation failed", "details": errors}), 400
 
         username = data["username"]
-        redis_client: redis.Redis = current_app.redis  # type: ignore[attr-defined]
 
-        # Check Redis for username availability (HEXISTS usernames <username>)
-        if redis_client.hexists("usernames", username):
+        # Check Redis for username availability using CacheService
+        if CacheService.is_username_taken(username):
             return jsonify({"error": "Username is already taken"}), 409
 
         try:
             user_id = User.create(data)
-
-            # Mark username as taken in Redis (HSET usernames <username> 1)
-            redis_client.hset("usernames", username, 1)
-
+            CacheService.add_username_to_cache(username)
             return jsonify({"message": "User registered", "user_id": user_id}), 201
 
         except Exception as e:
